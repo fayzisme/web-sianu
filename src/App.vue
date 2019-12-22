@@ -1,11 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div v-if="$isLogin" id="nav">
-      <router-link v-if="$route.path !== '/home'" to="/home">Home</router-link>
-      <router-link v-if="$route.path !== '/about'" to="/about">About</router-link>
-      <router-link v-if="$route.path !== '/note'" to="/note">Note</router-link>
-
-    </div> -->
       <header>
         <div v-if="$isLogin" id="nav">
             <router-link v-if="$route.path !== '/home'" to="/home">Home</router-link>
