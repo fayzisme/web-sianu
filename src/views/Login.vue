@@ -119,7 +119,7 @@ export default class Login extends Vue {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scope>
 .wrapper {
   margin-top: 80px;
   margin-bottom: 80px;

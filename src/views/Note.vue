@@ -49,12 +49,16 @@
               <h2 class="form-note-heading">
                   {{note.id ? "Change note" : "Add new note"}}
               </h2>
+              <p>Insert Name</p>
               <input v-model="note.title" type="text" placeholder="Full Name" autofocus
                     class="form-control" :class="{'is-invalid': hasSubmit && note.title.length === 0}"/>
+              <p>Phone Number</p>
               <input v-model="note.description" type="text" placeholder="eg: 6812116666"
                     class="form-control" :class="{'is-invalid': hasSubmit && note.description.length === 0}"/>
+              <p>email</p>
               <input type="text" placeholder="eg: yourname@sinaukoding.id"
                     class="form-control"/>
+              <p>Address</p>
               <input v-model="note.content" type="text" placeholder="valid address"
                     class="form-control" :class="{'is-invalid': hasSubmit && note.content.length === 0}"/>
               <div class="btn-submit text-lg-right">

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
       <header>
-        <div v-if="$isLogin" id="nav">
+        <!-- <div v-if="$isLogin" id="nav">
             <router-link v-if="$route.path !== '/home'" to="/home">Home</router-link>
             <router-link v-if="$route.path !== '/about'" to="/about">About</router-link>
             <router-link v-if="$route.path !== '/note'" to="/note">Participant</router-link>
-        </div>
+        </div> -->
         <div class="logo">
             <a href="">
                 <img class="logo-text" src="./assets/Logo.svg" alt="logo">
@@ -21,11 +21,10 @@
             <li>
                 <a href="">About Us</a>
             </li>
-            <li>
+            <li v-if="$isLogin">
                 <a href="#"><i class="fa fa-user"></i></a>
                 <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#" class="logout">Logout</a></li>
+                    <li><a href="#"><button @click="doLogout">Logout</button></a></li>
                 </ul>
             </li>
         </ul>
@@ -36,6 +35,20 @@
   </div>
 </template>
 
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+@Component({ name: "App"})
+export default class App extends Vue {
+  public doLogout() {
+    // set data session
+    //@ts-ignore
+    this.$doCookieOperation("session", null);
+
+    this.$router.push("/");
+  }
+}
+</script>
 
 <style lang="scss">
 @import "~bootstrap/dist/css/bootstrap.min.css";
@@ -119,6 +132,7 @@ body {
                 padding: 21px;
                 background: white;
                 color: #444;
+                text-align: center;
               }
             }
           }
