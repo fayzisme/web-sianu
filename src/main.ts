@@ -1,10 +1,20 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import Vue from 'vue';
+import Notification from "vue-notification";
 
-Vue.config.productionTip = false
+import App from './App.vue';
+import router from './router';
+import doCookieOperation from './helper/CookieHelper';
 
-new Vue({
+Vue.config.productionTip = false;
+
+// prototyping any method to all vue instance
+Vue.prototype.$doCookieOperation = doCookieOperation;
+
+Vue.use(Notification);  // register custom plugin to vue
+
+const app = new Vue({
   router,
-  render: h => h(App)
-}).$mount('#app')
+  render: h => h(App),
+});
+
+app.$mount('#app');
