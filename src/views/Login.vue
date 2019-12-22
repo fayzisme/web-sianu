@@ -92,7 +92,7 @@ export default class Login extends Vue {
               text: 'Succes'
             });
 
-            this.$router.push("/home");
+            this.$router.push("/note");
           } else {
              this.$notify({
               group: 'default',
