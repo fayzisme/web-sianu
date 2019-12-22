@@ -24,7 +24,7 @@
                       :class="{'is-invalid': hasSubmit && user.password.length === 0}"
                     />
                     <label class="checkbox">
-                     <p>Remember me <input v-model="rememberMe" type="checkbox" /></p>
+                     <p><input v-model="rememberMe" type="checkbox"/>Remember me</p>
                     </label>
                 </div>
                 <div class="form-footer">
@@ -138,8 +138,8 @@ export default class Login extends Vue {
       flex-direction: column;
       width: 320px;
       padding: 40px 20px;
-      border: 0.5px solid #36c4ed;
-      box-shadow: 0px 0px 10px #36c4ed;
+      // border: 0.5px solid #36c4ed;
+      // box-shadow: 0px 0px 10px #edf1f8;
       border-radius: 10px;
 
       .form-head {
@@ -189,14 +189,14 @@ export default class Login extends Vue {
 
           p {
             font-size: 0.8em;
+            margin-left: 25px;
           }
           
           input {
-            height: 15px;
-            margin-bottom: 5px;
-            position: relative;
-            left: -15px;
-            bottom: 16px;
+            height: 13px;
+            position: absolute;
+            right: 120px;
+            bottom: 89px;
           }
         }
 
